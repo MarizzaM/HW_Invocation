@@ -11,13 +11,13 @@ namespace InvocationHW
     {
         static void Main(string[] args)
         {
-            Func<double> func = new Func<double>(() =>
-            {
-                Console.WriteLine($"PI = {Math.PI}");
-                return Math.PI;
-            });
+            Func<double> func = new Func<double>(() => { return Math.PI; });
 
-            Task.Run<double>(() => { return (double)func.DynamicInvoke(); }).Wait();
+            Task<double> result;
+
+            result = Task.Run<double>(() => { return (double)func.DynamicInvoke(); });
+
+            Console.WriteLine($"PI = {result.Result}");
 
         }
     }
