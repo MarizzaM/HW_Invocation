@@ -1,0 +1,26 @@
+===1===
+Dynamically invokes (late-bound) the method represented by the current delegate.
+
+===2===
+DynamicInvoke : Executes on the UI thread, but calling thread waits for completion before continuing. 
+BeginInvoke : Executes on the UI thread, and calling thread doesn't wait for completion.
+
+===3===
+Use the EndInvoke
+ 
+===4===
+No
+
+===5===
+the IAsyncResult help us to check whether the BeginInvoke has completed or not
+
+===6===
+
+===7===
+
+===8===
+
+===9===
+
+===10===
+Use foreach loop which iterates over the delegate methods using the GetInvocationList and fires them using the BeginInvoke
