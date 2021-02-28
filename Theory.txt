@@ -15,12 +15,17 @@ No
 the IAsyncResult help us to check whether the BeginInvoke has completed or not
 
 ===6===
+the BeginInvoke run on the Background thread
 
 ===7===
-
+     foreach (var del in func.GetInvocationList())
+     {
+         IAsyncResult iAsyncResult = del.BeginInvoke(null, "hello"); 
+     }
 ===8===
-
+A callback method is a method that will be called when a process is done executing a specific task. 
+To use a callback method, you must pass BeginInvoke an AsyncCallback delegate that represents the callback method.
 ===9===
-
+Use the AsyncResult.AsyncDelegate property to get the delegate that was used to initiate the call so that you can call EndInvoke
 ===10===
 Use foreach loop which iterates over the delegate methods using the GetInvocationList and fires them using the BeginInvoke
